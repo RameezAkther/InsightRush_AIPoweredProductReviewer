@@ -7,6 +7,7 @@ This repository contains only the essential files for execution. To run the appl
 3. **API Key Configuration**: Set up the Gemini API key by following the instructions provided in the documentation.
 4. **Database Connection**: Establish a connection to the database by configuring the necessary credentials and connection strings.
 
+These steps will help you set up and run the InsightRush application smoothly. For more details read the documentation.
 A sample output video demonstrating the application's functionality can be found in the `sample_output_video` folder. Below are some sample output images for reference:
 
 ![png](./sample_output_images/1.png)
@@ -17,4 +18,4 @@ A sample output video demonstrating the application's functionality can be found
 ![png](./sample_output_images/6.png)
 ![png](./sample_output_images/7.png)
 
-These steps will help you set up and run the InsightRush application smoothly.
+
