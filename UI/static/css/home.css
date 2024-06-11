@@ -1,0 +1,164 @@
+body{
+    margin: 0px;
+    padding-top: 60px;
+}
+
+#video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Viewport width */
+    height: 100vh; /* Viewport height */
+    object-fit: cover; /* Cover the entire area */
+    z-index: -1;
+}
+
+.taskBar{
+    height: 50px;
+    border-bottom: 3px solid;
+    position: fixed;
+    top:0px;
+    left:0px;
+    right:0px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.homeButton:hover,.docButton:hover, .sourceButton:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border:0px;
+    border-bottom: 0px;
+    border-left: 3px solid;
+    border-color: black;
+    
+}
+
+.homeButton:active,.docButton:active, .sourceButton:active{
+    cursor: pointer;
+    background-color: grey;
+    transition: background-color 0s;
+}
+
+.homeButton, .docButton, .sourceButton{
+    display: inline-block;
+    height: 50px;
+    width: 135px;
+    font-size: medium;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    margin-left: 0px;
+    border-left: 3px solid;
+    margin-right: -4px;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: background-color 0.2s ease;
+}
+
+.taskBarLogo{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 50vh;
+}
+
+.spaceBetween{
+    flex: 1;
+    min-width: 70px;
+}
+
+.buttons{
+    flex-shrink: 0;
+}
+
+.spaceTop{
+    flex:1;
+}
+
+.linkBox::placeholder{
+    color:black;
+    font-weight:600;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: url('../Images/close.png') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.linkBox{
+    width: 50vw;
+    outline: none;
+    max-width: 500px;
+    border: 3px solid;
+    border-color: black;
+    height: 35px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding-left: 13px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.searchButton:hover{
+    cursor: pointer;
+    background-color: black;
+    color:white;
+}
+
+.searchButton:active{
+    background-color: grey;
+    transition: background-color 0s;
+}
+
+.searchButton{
+    height: 35px;
+    width: 90px;
+    border-right: 3px solid;
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-left: 0px;
+    border-color: black;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:bold;
+    font-size: small;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    margin-left: -4px;
+    transform: background-color 0.2s;
+}
+
+.logo{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 75px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+.flash-message-spacer {
+    height: 30px;
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+    font-weight: 500;
+    color: red;
+}

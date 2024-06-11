@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/postInfo1.css">
+    <link rel="icon" href="../static/Images/favicon.png" type="image/x-icon">
+    <title>InsightRush</title>
+</head>
+<body>
+    {% include 'taskbar.html' %}
+    <video autoplay muted loop id="video-bg">
+        <source src="..\static\Images\bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="info">
+        <div class="innerInfo">
+                <div class="innerInfo2">
+                <div class="block1">
+                    <span><u>Product Title:</u> {{content.Title}}</span>
+                </div>
+                <div class="innerInfo3">
+                    <div class="block2">
+                        <span><b>Current Price:</b> {{content.CurrentPrice}}</span>
+                    </div>
+                    <div class="block3">
+                        <span><b>Label Price:</b> {{content.LabelPrice}}</span>
+                    </div>
+                    <div class="block4">
+                        <span><b>Savings:</b> {{content.Savings}}&nbsp;&nbsp;{{content.Discount}}</span>
+                    </div>
+                </div>
+                <div class="innerInfo4">
+                    <div class="block5">
+                        <div>
+                            <span><b>Highest Price:</b> {{content.HighestPrice}} <b>on</b> {{content.DateofHighestPrice}}</span>
+                        </div>
+                        <div>
+                            <span><b>Average Price:</b> {{content.AveragePrice}} <b>as of</b> {{content.DateofAveragePrice}}</span>
+                        </div>
+                        <div>
+                            <span><b>Lowest Price:</b> {{content.LowestPrice}} <b>on</b> {{content.DateofLowestPrice}}</span>
+                        </div>
+                    </div>
+                    <div class="block6">
+                        <div>
+                            <span><b>Based on the price history we derive that</b></span>
+                        </div>
+                        <div>
+                            <span>{{content.Suggestion}}</span>
+                        </div>
+                        <div style="margin-top: 8px;">
+                            <span><b>Status code:</b> {{content.Status}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="innerInfo5">
+                    <div class="innerInfo6">
+                        <div class="innerinnerInfo6">
+                            <div>
+                                <span>Positive Reviews</span> 
+                            </div>
+                            <div class="slider" id="slider1">
+                                <!-- <span>{{content['Positive1']}}</span> -->
+                                <div class="slide">{{content.pos1}} CNN</div>
+                                <div class="slide">{{content.pos2}} LSTM</div>
+                                <div class="slide">{{content.pos3}} Transformer</div>
+                            </div>
+                            <div>
+                                <button class="prev1"><img src="..\static\Images\left.png" style="width: 20px; height: 20px;object-fit: contain;margin-right: 30px;"></button>
+                                <button class="next1"><img src="..\static\Images\right.png" style="width: 20px; height: 20px;object-fit: contain;"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="innerInfo7">
+                        <div class="innerinnerInfo7">
+                            <div>
+                                <span>Negative Reviews</span>
+                            </div>
+                            <div class="slider" id="slider2">
+                                <!-- <span>{{content['Negative1']}}</span> -->
+                                <div class="slide">{{content.neg1}} CNN</div>
+                                <div class="slide">{{content.neg2}} LSTM</div>
+                                <div class="slide">{{content.neg3}} Transformer</div>
+                            </div>
+                            <div>
+                                <button class="prev1"><img src="..\static\Images\left.png" style="width: 20px; height: 20px;object-fit: contain;margin-right: 30px;"></button>
+                                <button class="next1"><img src="..\static\Images\right.png" style="width: 20px; height: 20px;object-fit: contain;"></button>
+                            </div>
+                        </div>
+                        <script src="../static/js/script.js"></script>
+                    </div>
+                    
+                    <script src="../static/js/script.js"></script>
+                    <div class="innerInfo8">
+                        <div class="amazonAITitle">
+                            <span>Amazon's AI summarizer</span>
+                        </div>
+                        <div class="amazonAIP">
+                            <p style="font-size: small; font-weight: 400;;">{{content.AmazonAI}}"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="imgPropContain">
+            <img src="\image" class="sliderImage" alt="product-image">
+            <img src="\image1" class="sliderImage" alt="wordcloud1">
+            <img src="\image22" class="sliderImage" alt="wordcloud2">
+            <img src="\image3" class="sliderImage" alt="wordcloud2">
+            <button class="prev" onclick="prevSlide()"><img src="..\static\Images\left.png" style="width: 20px; height: 20px;object-fit: contain;"></button>
+            <button class="next" onclick="nextSlide()"><img src="..\static\Images\right.png" style="width: 20px; height: 20px;object-fit: contain;"></button>
+        </div>
+        <script src="../static/js/script2.js"></script>
+    </div>
+    <div class="texts">
+        <div class="innerText1">
+            <span style="font-size: large;font-weight: bold;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                Abstractive Summary of positive reviews
+            </span>
+            <p style="font-size: small;font-weight: normal;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                {{content.posSum}}
+            </p>
+            <span style="font-size: large;font-weight: bold;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                Extractive Summary of positive reviews
+            </span>
+            <p style="font-size: small;font-weight: normal;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                {{content.EposSum}}
+            </p>
+        </div>
+        <div class="innerText2">
+            <span style="font-size: large;font-weight:bold;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                Abstractive Summary of negative reviews
+            </span>
+            <p style="font-size: small;font-weight: normal;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                {{content.negSum}}
+            </p>
+            <span style="font-size: large;font-weight:bold;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                Extractive Summary of negative reviews
+            </span>
+            <p style="font-size: small;font-weight: normal;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                {{content.EnegSum}}
+            </p>
+        </div>
+        <div class="innerText3">
+            <span style="font-size: large;font-weight: bold;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                Total number of reviews 
+                <span style="font-size: medium;font-weight:normal;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                    {{content.NumRev}}
+                </span>
+            <br>
+            </span>
+            <span style="font-size: large;font-weight: bold;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                Number of scraped reviews 
+                <span style="font-size: medium;font-weight:normal;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                    {{content.UsrNumRev}}
+                </span>
+            </span>
+            <br><br>
+            <span style="font-size: large;font-weight: bold;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                Product detail
+            </span>
+            <ul style="font-size: small;font-weight: normal;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                {% for item in content.About %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul> 
+        </div>
+    </div>
+</body>
+</html>

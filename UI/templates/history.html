@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsightRush</title>
+    <link rel="stylesheet" href="../static/css/history.css">
+    <link rel="icon" href="../static/Images/favicon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    {% include 'taskbar.html' %}
+    <video autoplay muted loop id="video-bg">
+        <source src="..\static\Images\bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class = "bound">
+        <div class="grid-container">
+            {% for product in content %}
+            <div class="grid-item">
+                <div class="block1">
+                    <img src="/image2?{{ loop.index }}" class="imgProp">
+                </div>
+                <div class="block2">
+                    <span class="prodName">{{ product[1] }}</span>
+                    <span class="prodName">{{ product[2] }}</span>
+                    <button class="go" onclick="viewProduct('{{ product[0] }}')">View</button>
+                </div>
+            </div>
+            {% endfor %}
+            <script>
+                function viewProduct(productID) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/history",
+                        data: {productID: productID},
+                        success: function(response) {
+                            // Handle the response here if needed
+                            console.log("Product ID sent to Flask: " + productID);
+                            window.location.href = "/historyInfo";
+                        },
+                        error: function(err) {
+                            console.error("Error sending product ID to Flask: " + err);
+                        }
+                    });
+                }
+                </script>
+        </div>
+    </div>
+</body>

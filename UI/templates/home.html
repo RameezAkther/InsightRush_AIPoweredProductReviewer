@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsightRush</title>
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="icon" href="../static/Images/favicon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <video autoplay muted loop id="video-bg">
+        <source src="..\static\Images\bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+        {% include 'taskbar.html' %}
+        
+        <div class="content">
+            <div class="spaceTop"></div>
+            <div class="logo">Welcome to Insight Rush.</div>
+            <div>
+                <form action="/submitURL" method="post">
+                    <input type="search" placeholder="Paste your amazon or flipkart product link here" class="linkBox" name="searchURL">
+                    <button type="submit" class="searchButton">Let's go</button>
+                </form>
+            </div>
+            <div class="flash-message-spacer">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            {{ message }}
+                        {% endfor %}                                                              
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <script>
+                $('.linkBox').focus(function() {
+                    $(this).attr('placeholder', '');
+                }).blur(function() {
+                    $(this).attr('placeholder', 'Paste your amazon or flipkart product link here');
+                });
+            </script> 
+        </div>
+</body>
+</html>

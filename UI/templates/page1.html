@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/preInfo.css">
+    <link rel="icon" href="../static/Images/favicon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>InsightRush</title>
+</head>
+<body>
+    {% include 'taskbar.html' %}
+    <video autoplay muted loop id="video-bg">
+        <source src="..\static\Images\bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="info">
+        <div class="containTitle">
+            <div class="containTitle2">
+                <div>
+                    <p class="prodTitle"><u>Product Title:</u> {{content[0]}}</p>
+                </div>
+                <div>
+                    <p class="nopgs">Number of reviews: {{content[1]}}</p>
+                </div>
+                <div class="containTitle3">
+                    <div class="block1">
+                        <p class="getNoPgs">Enter the number of pages. Available pages {{content[2]}} (1 page have 10 reviews): </p>
+                    </div>
+                    <div class="block2">
+                        <form action="/pageNumbers" method="post">
+                            <input type="text" placeholder="Number of pages" class="pgBox" name="pgNum">
+                            
+                        </form>
+                    </div>
+                    <div class="block3">
+                    </div>
+                </div>
+                <div class="flash-message-spacer">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                {{ message }}
+                            {% endfor %}                                                              
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <script>
+                    $('.pgBox').focus(function() {
+                        $(this).attr('placeholder', '');
+                    }).blur(function() {
+                        $(this).attr('placeholder', 'Number of pages');
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="imgPropContain">
+            <img src="/image"alt="Product Image" class="imgProp">
+        </div>
+    </div>
+    
+</body>
+</html>
