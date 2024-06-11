@@ -9,6 +9,6 @@ This repository contains only the essential files for execution. To run the appl
 
 A sample output video demonstrating the application's functionality can be found in the `sample_output_video` folder. Below are some sample output images for reference:
 
-[./sample/output/iamges/1.png]
+![png](./sample/output/iamges/1.png)
 
 These steps will help you set up and run the InsightRush application smoothly.
