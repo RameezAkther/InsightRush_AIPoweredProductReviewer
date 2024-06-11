@@ -11,7 +11,7 @@ from nltk.cluster.util import cosine_distance
 import numpy as np
 import google.generativeai as genai
 
-genai_api = "AIzaSyA44RXOJCpwf1OTmxF_PDQOc0OCffcJlX4"
+genai_api = "API_KEY_HERE"
 
 genai.configure(api_key=genai_api)
 
